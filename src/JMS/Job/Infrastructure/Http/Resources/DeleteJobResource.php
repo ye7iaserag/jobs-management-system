@@ -6,6 +6,10 @@ use Shared\Infrastructure\Http\Resources\BaseJsonResource;
 
 class DeleteJobResource extends BaseJsonResource
 {
+    public function __construct(array $response)
+    {
+        parent::__construct($response);
+    }
     /**
      * Transform the resource into an array.
      *

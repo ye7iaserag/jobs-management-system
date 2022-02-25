@@ -2,10 +2,15 @@
 
 namespace JMS\Job\Infrastructure\Http\Resources;
 
+use JMS\Job\Application\JobResponse;
 use Shared\Infrastructure\Http\Resources\BaseJsonResource;
 
 class GetJobByIdResource extends BaseJsonResource
 {
+    public function __construct(JobResponse $response)
+    {
+        parent::__construct($response);
+    }
     /**
      * Transform the resource into an array.
      *

@@ -40,6 +40,6 @@ final class DeleteJobController
             new DeleteJobByIdCommand($id)
         );
 
-        return new DeleteJobResource(true);
+        return new DeleteJobResource([true]);
     }
 }
