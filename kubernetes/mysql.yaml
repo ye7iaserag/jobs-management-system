@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: mysql
+  name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        network/sail: "true"
+        service: mysql
+    spec:
+      containers:
+        - env:
+            - name: MYSQL_ALLOW_EMPTY_PASSWORD
+              value: "1"
+            - name: MYSQL_DATABASE
+              value: 'jobs'
+            - name: MYSQL_PASSWORD
+            - name: MYSQL_ROOT_HOST
+              value: '%'
+            - name: MYSQL_ROOT_PASSWORD
+              value: '123456'
+            - name: MYSQL_USER
+          image: mysql/mysql-server:8.0
+          livenessProbe:
+            exec:
+              command:
+                - mysqladmin
+                - ping
+                - -p
+            failureThreshold: 3
+            timeoutSeconds: 5
+          name: mysql
+          ports:
+            - containerPort: 3306
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: sail-mysql
+      restartPolicy: Always
+      volumes:
+        - name: sail-mysql
+          persistentVolumeClaim:
+            claimName: sail-mysql
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: mysql
+  name: mysql
+spec:
+  ports:
+    - name: "3306"
+      port: 3306
+      targetPort: 3306
+  selector:
+    service: mysql
+status:
+  loadBalancer: {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  creationTimestamp: null
+  labels:
+    service: sail-mysql
+  name: sail-mysql
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+status: {}

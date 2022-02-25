@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: phpmyadmin
+  name: phpmyadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: phpmyadmin
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        network/sail: "true"
+        service: phpmyadmin
+    spec:
+      containers:
+        - env:
+            - name: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_USERNAME
+            - name: PMA_HOST
+              value: mysql
+          image: phpmyadmin/phpmyadmin
+          name: phpmyadmin
+          ports:
+            - containerPort: 80
+          resources: {}
+      restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: phpmyadmin
+  name: phpmyadmin
+spec:
+  ports:
+    - name: "8080"
+      port: 8080
+      targetPort: 80
+  selector:
+    service: phpmyadmin
+status:
+  loadBalancer: {}

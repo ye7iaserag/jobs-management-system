@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: api
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: api
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        network/sail: "true"
+        service: api
+    spec:
+      containers:
+        - env:
+            - name: CONTAINER_ROLE
+              value: api
+            - name: LARAVEL_SAIL
+              value: "1"
+            - name: WWWUSER
+              value: "1000"
+            - name: XDEBUG_CONFIG
+              value: client_host=host.docker.internal
+            - name: XDEBUG_MODE
+              value: "off"
+          image: jms/app
+          name: api
+          ports:
+            - containerPort: 80
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/www/html
+              name: api-claim0
+      restartPolicy: Always
+      volumes:
+        - name: api-claim0
+          persistentVolumeClaim:
+            claimName: api-claim0
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: api
+  name: api
+spec:
+  ports:
+    - name: "80"
+      port: 80
+      targetPort: 80
+  selector:
+    service: api
+status:
+  loadBalancer: {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  creationTimestamp: null
+  labels:
+    service: api-claim0
+  name: api-claim0
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+status: {}
+

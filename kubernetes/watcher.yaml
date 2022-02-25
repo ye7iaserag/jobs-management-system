@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: watcher
+  name: watcher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: watcher
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        network/sail: "true"
+        service: watcher
+    spec:
+      containers:
+        - env:
+            - name: CONTAINER_ROLE
+              value: watcher
+          image: jms/app
+          name: watcher
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/www/html
+              name: watcher-claim0
+      restartPolicy: Always
+      volumes:
+        - name: watcher-claim0
+          persistentVolumeClaim:
+            claimName: watcher-claim0
+status: {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  creationTimestamp: null
+  labels:
+    service: watcher-claim0
+  name: watcher-claim0
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+status: {}
