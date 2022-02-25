@@ -16,7 +16,8 @@ use Shared\Infrastructure\Exceptions\ValidationException;
 use Shared\Infrastructure\Constants\Error;
 use Shared\Infrastructure\Exceptions\AuthorizationException;
 
-abstract class BaseRequest extends FormRequest {
+abstract class BaseRequest extends FormRequest
+{
 
     /**
      * 
@@ -28,7 +29,8 @@ abstract class BaseRequest extends FormRequest {
      * @param array $server
      * @param type $content
      */
-    public function __construct(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), $content = null) {
+    public function __construct(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), $content = null)
+    {
         parent::__construct($query, $request, $attributes, $cookies, $files, $server, $content);
     }
 
@@ -39,12 +41,14 @@ abstract class BaseRequest extends FormRequest {
      * 
      * @return boolean
      */
-    public function authorize() {
+    public function authorize()
+    {
         throw new AuthorizationException(Error::UNAUTHORIZED_ACCESS);
     }
 
-    protected function failedValidation(Validator $validator) {
-        throw new ValidationException(Error::INVALID_INPUTS);//, $validator->errors()->messages());
+    protected function failedValidation(Validator $validator)
+    {
+        throw new ValidationException(Error::INVALID_INPUTS); //, $validator->errors()->messages());
     }
 
     /**
@@ -58,5 +62,4 @@ abstract class BaseRequest extends FormRequest {
     {
         throw new AuthorizationException(Error::UNAUTHORIZED_ACCESS);
     }
-
 }
