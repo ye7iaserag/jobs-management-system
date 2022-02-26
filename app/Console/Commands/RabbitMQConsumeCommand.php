@@ -7,7 +7,6 @@ use Shared\Domain\Bus\Event\ConnectionFactory;
 use Symfony\Component\Messenger\Worker;
 use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Shared\Infrastructure\Bus\Messenger\RabbitMQConnectionFactory;
 use Symfony\Component\Messenger\EventListener\StopWorkerOnTimeLimitListener;
 
 class RabbitMQConsumeCommand extends Command

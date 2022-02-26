@@ -102,7 +102,7 @@ final class JobRepository implements JobRepositoryInterface
         } catch (Exception $e) {
             throw new EloquentException(
                 $e->getMessage(),
-                (int)$e->getCode(),
+                null,
                 $e->getPrevious()
             );
         }

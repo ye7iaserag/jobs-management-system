@@ -14,7 +14,8 @@ class UserModel extends Authenticatable implements JWTSubject
     use HasFactory, Notifiable;
 
     protected $table = 'user';
-
+    protected $keyType = 'string';
+    protected $primaryKey = 'id';
     public $incrementing = false;
 
     /**

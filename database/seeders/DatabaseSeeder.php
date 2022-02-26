@@ -34,12 +34,26 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'role' => 1
         ]);
+        $userId = $faker->uuid;
         DB::table('user')->insert([
-            'id' => $faker->uuid,
+            'id' => $userId,
             'name' => 'Regular',
             'email' => 'regular@jms.com',
             'password' => Hash::make('12345678'),
             'role' => 2
+        ]);
+
+        DB::table('job')->insert([
+            'id' => $faker->uuid,
+            'title' => 'test title',
+            'description' => 'test description',
+            'user_id' => $userId
+        ]);
+        DB::table('job')->insert([
+            'id' => $faker->uuid,
+            'title' => 'test title',
+            'description' => 'test description',
+            'user_id' => $userId
         ]);
     }
 }

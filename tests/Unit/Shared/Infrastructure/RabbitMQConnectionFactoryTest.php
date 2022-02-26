@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\Shared\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Config;
 use Tests\TestCase;
 use Shared\Infrastructure\Bus\Messenger\RabbitMQConnectionFactory;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpReceiver;
@@ -17,6 +18,20 @@ final class RabbitMQConnectionFactoryTest extends TestCase
     use WithFaker;
 
     function test_rabbitmq_connection_factory_make_send_message_middleware()
+    {
+        $temp = Config::get('rabbitmq.fake');
+        Config::set('rabbitmq.fake', false);
+
+        $factory = new RabbitMQConnectionFactory();
+
+        $middleware = $factory->makeSendMessageMiddleware();
+        
+        Config::set('rabbitmq.fake', $temp);
+
+        $this->assertInstanceOf(MiddlewareInterface::class, $middleware);
+    }
+
+    function test_rabbitmq_connection_factory_make_send_message_middleware_sync()
     {
         $factory = new RabbitMQConnectionFactory();
 

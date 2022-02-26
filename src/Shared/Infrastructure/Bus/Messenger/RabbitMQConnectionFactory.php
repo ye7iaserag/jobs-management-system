@@ -18,6 +18,9 @@ final class RabbitMQConnectionFactory implements ConnectionFactory
 
     public function makeSendMessageMiddleware()
     {
+        if (intval(config('rabbitmq.fake'))) {
+            return $this->makeHandleMessageMiddleware();
+        }
         $sendersLocator = new RabbitMQSenderLocator($this);
         
         $middleware = new SendMessageMiddleware($sendersLocator);

@@ -16,6 +16,7 @@ use PHPOpenSourceSaver\JWTAuth\Exceptions\TokenExpiredException;
 use PHPOpenSourceSaver\JWTAuth\Exceptions\TokenInvalidException;
 use Shared\Infrastructure\Exceptions\AuthorizationException;
 use Shared\Infrastructure\Exceptions\HandlerFailedException as ExceptionsHandlerFailedException;
+use Shared\Infrastructure\Exceptions\InfrastructureException;
 use Shared\Infrastructure\Exceptions\UnknownErrorException;
 use Shared\Infrastructure\Exceptions\ValidationException;
 use stdClass;
@@ -64,7 +65,7 @@ final class HandlerTest extends TestCase
         $this->assertNotNull($result);
     }
 
-    function test_handler_validation_exception()
+    function test_handler_domain_exception()
     {
         $handler = new Handler($this->app->make(Container::class));
 
@@ -75,7 +76,18 @@ final class HandlerTest extends TestCase
         $this->assertInstanceOf(JsonResponse::class, $result);
     }
 
-    function test_handler_domain_exception()
+    function test_handler_infrastructure_exception()
+    {
+        $handler = new Handler($this->app->make(Container::class));
+
+        $exception = new class extends InfrastructureException{};
+
+        $result = $handler->render(new Request(), $exception);
+
+        $this->assertInstanceOf(JsonResponse::class, $result);
+    }
+
+    function test_handler_validation_exception()
     {
         $handler = new Handler($this->app->make(Container::class));
 

@@ -65,10 +65,13 @@ class Handler extends ExceptionHandler
             throw new AuthorizationException(Error::TOKEN_INVALID);
         }
         if ($e instanceof ValidationException) {
-            return new JsonResponse(new ErrorsResource(['errors'=>[['code'=>$e->getCode(), 'msg'=>$e->getMessage(), 'data' => $e->getValidationErrors()]]]));
+            return new JsonResponse(new ErrorsResource(['errors'=>[['code'=>$e->getCode(), 'msg'=>$e->getMessage(), 'data' => $e->getValidationErrors()]]]), Error::HTTP_CODE[$e->getCode()]);
         }
-        if ($e instanceof DomainException || $e instanceof InfrastructureException) {
-            return new JsonResponse(new ErrorsResource(['errors'=>[['code'=>$e->getCode(), 'msg'=>$e->getMessage()]]]));
+        if ($e instanceof DomainException) {
+            return new JsonResponse(new ErrorsResource(['errors'=>[['code'=>$e->getCode(), 'msg'=>$e->getMessage()]]]), Error::HTTP_CODE[Error::INVALID_INPUTS]);
+        }
+        if ($e instanceof InfrastructureException) {
+            return new JsonResponse(new ErrorsResource(['errors'=>[['code'=>$e->getCode(), 'msg'=>$e->getMessage()]]]), Error::HTTP_CODE[$e->getCode()]);
         }
 
         throw new UnknownErrorException();
