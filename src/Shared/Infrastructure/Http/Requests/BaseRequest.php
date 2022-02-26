@@ -43,12 +43,12 @@ abstract class BaseRequest extends FormRequest
      */
     public function authorize()
     {
-        throw new AuthorizationException(Error::UNAUTHORIZED_ACCESS);
+        throw new AuthorizationException();
     }
 
     protected function failedValidation(Validator $validator)
     {
-        throw new ValidationException(Error::INVALID_INPUTS); //, $validator->errors()->messages());
+        throw new ValidationException($validator->errors()->messages()); //, $validator->errors()->messages());
     }
 
     /**
@@ -56,10 +56,10 @@ abstract class BaseRequest extends FormRequest
      *
      * @return void
      *
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws AuthorizationException
      */
     protected function failedAuthorization()
     {
-        throw new AuthorizationException(Error::UNAUTHORIZED_ACCESS);
+        throw new AuthorizationException();
     }
 }

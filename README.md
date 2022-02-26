@@ -2,6 +2,19 @@
 
 This repo contains a sample project for component based bounded context hexagonal architecture job management system.
 
+### Commands:
+- Use `php artisan test --coverage` to run tests and check coverage.
+- Use `docker compose build` and `docker compose up` to run compose file (docker compose >= v2).
+- Use `kubectl` with Ingress to run kubernetes cluster.
+
+### Exposed ports:
+| Http service | Port |
+| ----------- | ----------- |
+| api | `80` |
+| phpmyadmin | `8080` |
+| rabbitmq manager | `15672` |
+| mailhog | `8025` |
+
 ## Technical Decisions and Implementation details:
 
 - Laravel Framework is used in this project.

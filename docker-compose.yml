@@ -1,5 +1,5 @@
 # For more information: https://laravel.com/docs/sail
-version: '3'
+version: '3.9'
 services:
     api:
         build:
@@ -102,7 +102,7 @@ services:
 
 networks:
     sail:
-        # name: sail
+        name: sail
         driver: bridge
 volumes:
     sail-mysql:
