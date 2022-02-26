@@ -51,6 +51,7 @@ metadata:
     service: api
   name: api
 spec:
+  type: NodePort
   ports:
     - name: "80"
       port: 80

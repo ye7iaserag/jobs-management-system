@@ -70,18 +70,20 @@ services:
         networks:
             - sail
         healthcheck:
-            test: rabbitmq-diagnostics -q ping
-            interval: 30s
-            timeout: 30s
-            retries: 3
+            timeout: 5s
+            interval: 5s
+            retries: 5
+            test:
+                - "CMD"
+                - "rabbitmqctl"
+                - "status"
     watcher:
         image: jms/app
         container_name: watcher
         networks:
             - sail
         depends_on:
-            - api
-            - rabbitmq:
+            rabbitmq:
                 condition: service_healthy
         volumes:
             - '.:/var/www/html'

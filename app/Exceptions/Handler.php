@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Shared\Domain\Port\DomainException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -41,7 +42,9 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $e)
     {
-        // dd($e);
+        if ($e instanceof DomainException || $e instanceof DomainException) {
+            
+        }
         return parent::render($request, $e);
     }
 }
