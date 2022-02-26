@@ -3,15 +3,12 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Shared\Domain\Bus\Event\ConnectionFactory;
 use Symfony\Component\Messenger\Worker;
 use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\Messenger\Bridge\Amqp\Transport\Connection;
-use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpReceiver;
-use Symfony\Component\Messenger\Handler\HandlersLocator;
-use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
-use Shared\Infrastructure\Bus\Messenger\CallableFirstParameterExtractor;
 use Shared\Infrastructure\Bus\Messenger\RabbitMQConnectionFactory;
+use Symfony\Component\Messenger\EventListener\StopWorkerOnTimeLimitListener;
 
 class RabbitMQConsumeCommand extends Command
 {
@@ -20,7 +17,7 @@ class RabbitMQConsumeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'rabbitmq:consume';
+    protected $signature = 'rabbitmq:consume {timeLimit?}';
 
     /**
      * The console command description.
@@ -46,13 +43,22 @@ class RabbitMQConsumeCommand extends Command
      */
     public function handle()
     {
-        $factory = app()->make(RabbitMQConnectionFactory::class);
+        $this->factory = app()->make(ConnectionFactory::class);
+
         $messageBus = new MessageBus(
             [
-                $factory->makeHandleMessageMiddleware()
+                $this->factory->makeHandleMessageMiddleware()
             ]
         );
-        $worker = new Worker([$factory->getReceiver()], $messageBus, new EventDispatcher());
+
+        $eventDispatcher = new EventDispatcher();
+        
+        $timeLimit = $this->argument('timeLimit');
+
+        if (!is_null($timeLimit)) {
+            $eventDispatcher->addSubscriber(new StopWorkerOnTimeLimitListener($timeLimit));
+        }
+        $worker = new Worker([$this->factory->getReceiver()], $messageBus, $eventDispatcher);
         $options = [
             'sleep' => 3 * 1000000,
             'queues' => ['messages']

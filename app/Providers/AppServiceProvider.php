@@ -23,6 +23,7 @@ use JMS\Auth\Application\Login\LoginQueryHandler;
 use JMS\Auth\Domain\HashService as HashServiceInterface;
 use JMS\Auth\Infrastructure\HashService;
 use JMS\Auth\Application\Subscriber\JobCreatedSubscriber;
+use Shared\Domain\Bus\Event\ConnectionFactory;
 use Shared\Infrastructure\Bus\Messenger\RabbitMQConnectionFactory;
 
 class AppServiceProvider extends ServiceProvider
@@ -53,6 +54,11 @@ class AppServiceProvider extends ServiceProvider
             function ($app) {
                 return new MessengerCommandBus($app->tagged('command_handler'));
             }
+        );
+
+        $this->app->bind(
+            ConnectionFactory::class,
+            RabbitMQConnectionFactory::class
         );
 
 

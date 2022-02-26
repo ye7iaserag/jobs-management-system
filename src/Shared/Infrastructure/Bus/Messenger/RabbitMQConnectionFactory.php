@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Shared\Infrastructure\Bus\Messenger;
 
+use Shared\Domain\Bus\Event\ConnectionFactory;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpReceiver;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpSender;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\Connection;
@@ -11,7 +12,7 @@ use Symfony\Component\Messenger\Handler\HandlersLocator;
 use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 use Symfony\Component\Messenger\Middleware\SendMessageMiddleware;
 
-final class RabbitMQConnectionFactory
+final class RabbitMQConnectionFactory implements ConnectionFactory
 {
 
 
