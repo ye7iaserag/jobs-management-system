@@ -6,9 +6,9 @@ namespace JMS\Auth\Infrastructure\Persistence\Eloquent;
 
 use JMS\Auth\Domain\Entity\User;
 use JMS\Auth\Domain\ValueObject\UserEmail;
-use JMS\Auth\Domain\UserRepository as UserRepositoryInterface;
-use JMS\Auth\Domain\Users;
-use JMS\Auth\Domain\UsersFiltration;
+use JMS\Auth\Domain\Port\UserRepository as UserRepositoryInterface;
+use JMS\Auth\Domain\DTO\Users;
+use JMS\Auth\Domain\DTO\UsersFiltration;
 
 final class UserRepository implements UserRepositoryInterface
 {

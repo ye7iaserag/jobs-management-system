@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
 use Shared\Domain\Enum\Role;
 use Shared\Infrastructure\Persistence\Eloquent\UserModel;
-use Shared\Infrastructure\Services\AuthService;
+use Shared\Infrastructure\Service\AuthService;
 
 final class AuthServiceTest extends TestCase
 {

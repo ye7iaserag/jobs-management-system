@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Auth\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Auth\Application\LoginResponse;
+use JMS\Auth\Application\Response\LoginResponse;
 use JMS\Auth\Domain\ValueObject\JwtToken;
 use Tests\TestCase;
 

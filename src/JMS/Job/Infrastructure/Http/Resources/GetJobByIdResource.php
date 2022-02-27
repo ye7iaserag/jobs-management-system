@@ -2,7 +2,7 @@
 
 namespace JMS\Job\Infrastructure\Http\Resources;
 
-use JMS\Job\Application\JobResponse;
+use JMS\Job\Application\Response\JobResponse;
 use Shared\Infrastructure\Http\Resources\BaseJsonResource;
 
 class GetJobByIdResource extends BaseJsonResource

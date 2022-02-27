@@ -6,8 +6,8 @@ namespace Tests\Unit\JMS\Auth\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use JMS\Auth\Application\Subscriber\JobCreatedSubscriber;
-use JMS\Auth\Application\UserResponse;
-use JMS\Auth\Application\UsersResponse;
+use JMS\Auth\Application\Response\UserResponse;
+use JMS\Auth\Application\Response\UsersResponse;
 use JMS\Job\Domain\Event\JobCreated;
 use Shared\Domain\Bus\Event\EventBus;
 use Shared\Domain\Bus\Query\QueryBus;

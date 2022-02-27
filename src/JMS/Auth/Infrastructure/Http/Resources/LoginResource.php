@@ -2,7 +2,7 @@
 
 namespace JMS\Auth\Infrastructure\Http\Resources;
 
-use JMS\Auth\Application\LoginResponse;
+use JMS\Auth\Application\Response\LoginResponse;
 use Shared\Infrastructure\Http\Resources\BaseJsonResource;
 
 class LoginResource extends BaseJsonResource

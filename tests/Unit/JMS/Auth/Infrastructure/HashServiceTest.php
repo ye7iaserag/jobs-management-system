@@ -6,7 +6,7 @@ namespace Tests\Unit\JMS\Auth\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use JMS\Auth\Domain\ValueObject\UserPassword;
-use JMS\Auth\Infrastructure\HashService;
+use JMS\Auth\Infrastructure\Service\HashService;
 use Tests\TestCase;
 
 final class HashServiceTest extends TestCase

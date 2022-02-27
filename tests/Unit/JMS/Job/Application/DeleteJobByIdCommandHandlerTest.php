@@ -9,7 +9,7 @@ use JMS\Job\Application\DeleteJob\DeleteJobByIdCommand;
 use JMS\Job\Application\DeleteJob\DeleteJobByIdCommandHandler;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Exceptions\JobNotFound;
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Domain\Port\JobRepository;
 use Tests\TestCase;
 
 final class DeleteJobByIdCommandHandlerTest extends TestCase

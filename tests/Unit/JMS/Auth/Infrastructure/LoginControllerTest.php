@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Auth\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Auth\Application\LoginResponse;
+use JMS\Auth\Application\Response\LoginResponse;
 use JMS\Auth\Infrastructure\Http\Controllers\LoginController;
 use JMS\Auth\Infrastructure\Http\Requests\LoginRequest;
 use Shared\Domain\Bus\Query\QueryBus;

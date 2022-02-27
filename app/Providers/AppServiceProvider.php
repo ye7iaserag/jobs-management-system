@@ -9,20 +9,10 @@ use Shared\Domain\Port\UuidGenerator;
 use Shared\Infrastructure\Bus\Messenger\MessengerCommandBus;
 use Shared\Infrastructure\Bus\Messenger\MessengerEventBus;
 use Shared\Infrastructure\Bus\Messenger\MessengerQueryBus;
-use Shared\Infrastructure\Services\RamseyUuidGenerator;
+use Shared\Infrastructure\Service\RamseyUuidGenerator;
 use Illuminate\Support\ServiceProvider;
-use JMS\Auth\Application\ListUsers\ListUsersQueryHandler;
 use Shared\Domain\Port\AuthService as AuthServiceInterface;
-use Shared\Infrastructure\Services\AuthService;
-
-use JMS\Auth\Domain\JwtRepository as JwtRepositoryInterface;
-use JMS\Auth\Infrastructure\JwtRepository;
-use JMS\Auth\Domain\UserRepository as UserRepositoryInterface;
-use JMS\Auth\Infrastructure\Persistence\Eloquent\UserRepository;
-use JMS\Auth\Application\Login\LoginQueryHandler;
-use JMS\Auth\Domain\HashService as HashServiceInterface;
-use JMS\Auth\Infrastructure\HashService;
-use JMS\Auth\Application\Subscriber\JobCreatedSubscriber;
+use Shared\Infrastructure\Service\AuthService;
 use Shared\Domain\Bus\Event\ConnectionFactory;
 use Shared\Infrastructure\Bus\Messenger\RabbitMQConnectionFactory;
 
@@ -70,36 +60,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             AuthServiceInterface::class,
             AuthService::class
-        );
-
-        $this->app->bind(
-            JwtRepositoryInterface::class,
-            JwtRepository::class
-        );
-
-        $this->app->bind(
-            UserRepositoryInterface::class,
-            UserRepository::class
-        );
-
-        $this->app->bind(
-            HashServiceInterface::class,
-            HashService::class
-        );
-
-        $this->app->tag(
-            LoginQueryHandler::class,
-            'query_handler'
-        );
-
-        $this->app->tag(
-            ListUsersQueryHandler::class,
-            'query_handler'
-        );
-
-        $this->app->tag(
-            JobCreatedSubscriber::class,
-            'domain_event_subscriber'
         );
 
     }

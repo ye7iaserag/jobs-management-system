@@ -2,7 +2,7 @@
 
 namespace Shared\Infrastructure\Persistence\Eloquent;
 
-use Shared\Infrastructure\Exceptions\InfrastructureException;
+use Shared\Infrastructure\Exception\InfrastructureException;
 
 final class EloquentException extends InfrastructureException
 {

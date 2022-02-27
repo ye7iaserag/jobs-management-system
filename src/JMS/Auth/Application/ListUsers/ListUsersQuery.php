@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace JMS\Auth\Application\ListUsers;
 
 use Shared\Domain\Bus\Query\Query;
-use JMS\Auth\Domain\UsersFiltration;
+use JMS\Auth\Domain\DTO\UsersFiltration;
 
 final class ListUsersQuery implements Query
 {

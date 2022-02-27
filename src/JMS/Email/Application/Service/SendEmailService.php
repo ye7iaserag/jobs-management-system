@@ -6,7 +6,7 @@ namespace JMS\Email\Application\Service;
 
 use JMS\Email\Domain\Entity\Email;
 use JMS\Email\Domain\ValueObject\ { EmailId, EmailAddress, EmailSubject, EmailBody };
-use JMS\Email\Domain\EmailSender;
+use JMS\Email\Domain\Port\EmailSender;
 
 final class SendEmailService
 {

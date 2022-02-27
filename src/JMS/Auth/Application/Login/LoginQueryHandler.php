@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace JMS\Auth\Application\Login;
 
-use JMS\Auth\Application\LoginResponse;
+use JMS\Auth\Application\Response\LoginResponse;
 use JMS\Auth\Domain\ValueObject\{ UserEmail, UserPassword, JwtToken };
-use JMS\Auth\Domain\UserRepository;
-use JMS\Auth\Domain\UserNotFound;
-use JMS\Auth\Domain\JwtRepository;
-use JMS\Auth\Domain\HashService;
+use JMS\Auth\Domain\Port\UserRepository;
+use JMS\Auth\Domain\Exception\UserNotFound;
+use JMS\Auth\Domain\Port\JwtRepository;
+use JMS\Auth\Domain\Port\HashService;
 use Shared\Domain\Bus\Query\QueryHandler;
 
 final class LoginQueryHandler implements QueryHandler

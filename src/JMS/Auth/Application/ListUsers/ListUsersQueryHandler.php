@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace JMS\Auth\Application\ListUsers;
 
-use JMS\Auth\Application\UsersResponse;
-use JMS\Auth\Domain\UserRepository;
+use JMS\Auth\Application\Response\UsersResponse;
+use JMS\Auth\Domain\Port\UserRepository;
 use Shared\Domain\Bus\Query\QueryHandler;
 
 final class ListUsersQueryHandler implements QueryHandler

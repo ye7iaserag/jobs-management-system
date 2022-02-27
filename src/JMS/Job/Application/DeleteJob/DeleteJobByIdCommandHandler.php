@@ -6,7 +6,7 @@ namespace JMS\Job\Application\DeleteJob;
 
 use JMS\Job\Domain\ValueObject\JobId;
 use JMS\Job\Domain\Exceptions\JobNotFound;
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Domain\Port\JobRepository;
 use Shared\Domain\Bus\Command\CommandHandler;
 
 final class DeleteJobByIdCommandHandler implements CommandHandler

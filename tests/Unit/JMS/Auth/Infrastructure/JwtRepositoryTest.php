@@ -6,7 +6,7 @@ namespace Tests\Unit\JMS\Auth\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use JMS\Auth\Domain\Entity\User;
-use JMS\Auth\Infrastructure\JwtRepository;
+use JMS\Auth\Infrastructure\Service\JwtRepository;
 use Shared\Domain\Enum\Role;
 use Tests\TestCase;
 

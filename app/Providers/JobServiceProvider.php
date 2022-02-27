@@ -9,7 +9,7 @@ use JMS\Job\Application\DeleteJob\DeleteJobByIdCommandHandler;
 use JMS\Job\Application\GetJob\GetJobByIdQueryHandler;
 use JMS\Job\Application\ListJobs\ListJobsQueryHandler;
 use JMS\Job\Application\UpdateJob\UpdateJobCommandHandler;
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Domain\Port\JobRepository;
 use JMS\Job\Infrastructure\Persistence\Eloquent\JobRepository as EloquentJobRepository;
 use Illuminate\Support\ServiceProvider;
 

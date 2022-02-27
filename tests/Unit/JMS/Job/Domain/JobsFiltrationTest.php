@@ -6,7 +6,7 @@ namespace Tests\Unit\JMS\Job\Domain;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use JMS\Job\Domain\JobsFiltration;
+use JMS\Job\Domain\DTO\JobsFiltration;
 use JMS\Job\Domain\ValueObject\{ JobOwnerId };
 
 final class JobsFiltrationTest extends TestCase

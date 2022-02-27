@@ -8,7 +8,7 @@ use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Entity\JobOwner;
 use JMS\Job\Domain\ValueObject\{JobId, JobTitle, JobDescription};
 use JMS\Job\Domain\Exceptions\JobNotFound;
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Domain\Port\JobRepository;
 use Shared\Domain\Bus\Command\CommandHandler;
 
 final class UpdateJobCommandHandler implements CommandHandler

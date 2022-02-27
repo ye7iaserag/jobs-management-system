@@ -6,8 +6,8 @@ namespace Tests\Unit\Shared\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use Shared\Infrastructure\Exceptions\AuthorizationException;
-use Shared\Infrastructure\Exceptions\ValidationException;
+use Shared\Infrastructure\Exception\AuthorizationException;
+use Shared\Infrastructure\Exception\ValidationException;
 use Illuminate\Support\Facades\Validator;
 use Shared\Infrastructure\Http\Requests\BaseRequest;
 

@@ -7,7 +7,7 @@ namespace JMS\Job\Application\CreateJob;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Exceptions\JobAlreadyExists;
 use JMS\Job\Domain\ValueObject\{JobId, JobTitle, JobDescription, JobOwnerId};
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Domain\Port\JobRepository;
 use Shared\Domain\Bus\Command\CommandHandler;
 use Shared\Domain\Bus\Event\EventBus;
 

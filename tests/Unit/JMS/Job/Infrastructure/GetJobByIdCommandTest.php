@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\JobResponse;
+use JMS\Job\Application\Response\JobResponse;
 use Shared\Domain\Bus\Query\QueryBus;
 use Tests\TestCase;
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\JobResponse;
+use JMS\Job\Application\Response\JobResponse;
 use JMS\Job\Infrastructure\Http\Controllers\DeleteJobController;
 use JMS\Job\Infrastructure\Http\Controllers\GetJobByIdController;
 use JMS\Job\Infrastructure\Http\Requests\DeleteJobRequest;
@@ -17,7 +17,7 @@ use Shared\Domain\Enum\Role;
 use Shared\Domain\Port\AuthService;
 use Shared\Domain\ValueObject\IdentityRole;
 use Shared\Domain\ValueObject\UuidValueObject;
-use Shared\Infrastructure\Exceptions\AuthorizationException;
+use Shared\Infrastructure\Exception\AuthorizationException;
 use Tests\TestCase;
 
 final class GetJobByIdControllerTest extends TestCase

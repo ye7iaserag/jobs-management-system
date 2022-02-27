@@ -5,7 +5,7 @@ namespace JMS\Job\Infrastructure\Console;
 use Illuminate\Console\Command;
 use JMS\Job\Application\GetJob\GetJobByIdQuery;
 use JMS\Job\Application\ListJobs\ListJobsQuery;
-use JMS\Job\Domain\JobsFiltration;
+use JMS\Job\Domain\DTO\JobsFiltration;
 use Shared\Domain\Bus\Query\QueryBus;
 
 class ListJobsCommand extends Command

@@ -9,7 +9,7 @@ use JMS\Job\Application\GetJob\GetJobByIdQuery;
 use JMS\Job\Application\GetJob\GetJobByIdQueryHandler;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Exceptions\JobNotFound;
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Domain\Port\JobRepository;
 use Tests\TestCase;
 
 final class GetJobByIdQueryHandlerTest extends TestCase

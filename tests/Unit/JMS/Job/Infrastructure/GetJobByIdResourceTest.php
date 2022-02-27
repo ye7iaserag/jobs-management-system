@@ -6,7 +6,7 @@ namespace Tests\Unit\JMS\Job\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Request;
-use JMS\Job\Application\JobResponse;
+use JMS\Job\Application\Response\JobResponse;
 use JMS\Job\Infrastructure\Http\Resources\GetJobByIdResource;
 use Tests\TestCase;
 

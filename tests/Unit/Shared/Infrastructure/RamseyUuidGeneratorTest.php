@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
 use Shared\Domain\Enum\Role;
 use Shared\Infrastructure\Persistence\Eloquent\UserModel;
-use Shared\Infrastructure\Services\AuthService;
-use Shared\Infrastructure\Services\RamseyUuidGenerator;
+use Shared\Infrastructure\Service\AuthService;
+use Shared\Infrastructure\Service\RamseyUuidGenerator;
 
 final class RamseyUuidGeneratorTest extends TestCase
 {

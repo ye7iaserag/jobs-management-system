@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Auth\Domain;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Auth\Domain\UsersFiltration;
+use JMS\Auth\Domain\DTO\UsersFiltration;
 use JMS\Auth\Domain\ValueObject\UserRole;
 use Tests\TestCase;
 use Shared\Domain\Enum\Role;

@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Auth\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Auth\Application\UserResponse;
-use JMS\Auth\Application\UsersResponse;
+use JMS\Auth\Application\Response\UserResponse;
+use JMS\Auth\Application\Response\UsersResponse;
 use JMS\Auth\Domain\Entity\User;
-use JMS\Auth\Domain\Users;
+use JMS\Auth\Domain\DTO\Users;
 use JMS\Auth\Domain\ValueObject\UserEmail;
 use JMS\Auth\Domain\ValueObject\UserId;
 use JMS\Auth\Domain\ValueObject\UserPassword;

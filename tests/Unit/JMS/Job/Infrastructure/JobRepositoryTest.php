@@ -13,7 +13,7 @@ use JMS\Job\Infrastructure\Persistence\Eloquent\JobRepository;
 use Illuminate\Database\Eloquent\Builder;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Exceptions\JobNotFound;
-use JMS\Job\Domain\JobsFiltration;
+use JMS\Job\Domain\DTO\JobsFiltration;
 use JMS\Job\Domain\ValueObject\JobOwnerId;
 use Shared\Infrastructure\Persistence\Eloquent\EloquentException;
 use Shared\Infrastructure\Persistence\Eloquent\UserModel;

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace JMS\Job\Application\ListJobs;
 
-use JMS\Job\Application\JobsResponse;
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Application\Response\JobsResponse;
+use JMS\Job\Domain\Port\JobRepository;
 use Shared\Domain\Bus\Query\QueryHandler;
 
 final class ListJobsQueryHandler implements QueryHandler

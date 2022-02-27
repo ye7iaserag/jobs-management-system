@@ -8,9 +8,9 @@ use Illuminate\Foundation\Testing\WithFaker;
 use JMS\Job\Application\ListJobs\ListJobsQuery;
 use JMS\Job\Application\ListJobs\ListJobsQueryHandler;
 use JMS\Job\Domain\Entity\Job;
-use JMS\Job\Domain\JobRepository;
-use JMS\Job\Domain\Jobs;
-use JMS\Job\Domain\JobsFiltration;
+use JMS\Job\Domain\Port\JobRepository;
+use JMS\Job\Domain\DTO\Jobs;
+use JMS\Job\Domain\DTO\JobsFiltration;
 use Tests\TestCase;
 
 final class ListJobsQueryHandlerTest extends TestCase

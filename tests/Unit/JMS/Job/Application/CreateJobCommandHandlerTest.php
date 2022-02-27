@@ -9,7 +9,7 @@ use JMS\Job\Application\CreateJob\CreateJobCommand;
 use JMS\Job\Application\CreateJob\CreateJobCommandHandler;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Exceptions\JobAlreadyExists;
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Domain\Port\JobRepository;
 use Shared\Domain\Bus\Event\EventBus;
 use Tests\TestCase;
 

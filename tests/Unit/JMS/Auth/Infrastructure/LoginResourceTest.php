@@ -6,7 +6,7 @@ namespace Tests\Unit\JMS\Auth\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Request;
-use JMS\Auth\Application\LoginResponse;
+use JMS\Auth\Application\Response\LoginResponse;
 use JMS\Auth\Infrastructure\Http\Resources\LoginResource;
 use Tests\TestCase;
 

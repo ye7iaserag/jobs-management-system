@@ -6,7 +6,7 @@ namespace Tests\Unit\Shared\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Request;
-use Shared\Infrastructure\Exceptions\ValidationException;
+use Shared\Infrastructure\Exception\ValidationException;
 use Shared\Infrastructure\Http\Resources\ErrorsResource;
 use Tests\TestCase;
 

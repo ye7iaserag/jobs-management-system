@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\JobResponse;
+use JMS\Job\Application\Response\JobResponse;
 use JMS\Job\Domain\Entity\Job;
 use Tests\TestCase;
 use JMS\Job\Domain\ValueObject\{ JobId, JobDescription, JobOwnerId, JobTitle };

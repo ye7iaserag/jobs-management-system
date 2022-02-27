@@ -7,7 +7,7 @@ namespace Tests\Unit\JMS\Email\Application;
 use Illuminate\Foundation\Testing\WithFaker;
 use JMS\Email\Application\Send\SendEmailCommand;
 use JMS\Email\Application\Service\SendEmailService;
-use JMS\Email\Domain\EmailSender;
+use JMS\Email\Domain\Port\EmailSender;
 use JMS\Email\Domain\ValueObject\EmailAddress;
 use JMS\Email\Domain\ValueObject\EmailBody;
 use JMS\Email\Domain\ValueObject\EmailId;

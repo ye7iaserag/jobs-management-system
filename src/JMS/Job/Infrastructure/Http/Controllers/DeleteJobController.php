@@ -9,10 +9,10 @@ use Shared\Domain\Bus\Command\CommandBus;
 use JMS\Job\Infrastructure\Http\Requests\DeleteJobRequest;
 use Shared\Domain\Bus\Query\QueryBus;
 use JMS\Job\Application\GetJob\GetJobByIdQuery;
-use JMS\Job\Application\JobResponse;
+use JMS\Job\Application\Response\JobResponse;
 use JMS\Job\Infrastructure\Http\Resources\DeleteJobResource;
 use Shared\Domain\Port\AuthService;
-use Shared\Infrastructure\Exceptions\AuthorizationException;
+use Shared\Infrastructure\Exception\AuthorizationException;
 use Shared\Domain\Enum\Role;
 
 final class DeleteJobController

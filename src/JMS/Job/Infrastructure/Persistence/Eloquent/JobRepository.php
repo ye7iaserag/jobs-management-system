@@ -7,13 +7,13 @@ namespace JMS\Job\Infrastructure\Persistence\Eloquent;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\ValueObject\JobId;
 use JMS\Job\Domain\Exceptions\JobAlreadyExists;
-use JMS\Job\Domain\JobRepository as JobRepositoryInterface;
-use JMS\Job\Domain\Jobs;
+use JMS\Job\Domain\Port\JobRepository as JobRepositoryInterface;
+use JMS\Job\Domain\DTO\Jobs;
 use Shared\Infrastructure\Persistence\Eloquent\EloquentException;
 use Exception;
 use JMS\Job\Domain\Entity\JobOwner;
 use JMS\Job\Domain\Exceptions\JobNotFound;
-use JMS\Job\Domain\JobsFiltration;
+use JMS\Job\Domain\DTO\JobsFiltration;
 
 final class JobRepository implements JobRepositoryInterface
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Shared\Infrastructure\Bus\Messenger;
 
-use Shared\Infrastructure\Exceptions\InfrastructureException;
+use Shared\Infrastructure\Exception\InfrastructureException;
 use Throwable;
 
 final class CommandNotRegistered extends InfrastructureException

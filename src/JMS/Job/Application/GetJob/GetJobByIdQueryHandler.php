@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace JMS\Job\Application\GetJob;
 
-use JMS\Job\Application\JobResponse;
+use JMS\Job\Application\Response\JobResponse;
 use JMS\Job\Domain\ValueObject\JobId;
 use JMS\Job\Domain\Exceptions\JobNotFound;
-use JMS\Job\Domain\JobRepository;
+use JMS\Job\Domain\Port\JobRepository;
 use Shared\Domain\Bus\Query\QueryHandler;
 
 final class GetJobByIdQueryHandler implements QueryHandler

@@ -12,9 +12,9 @@ namespace Shared\Infrastructure\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 use Illuminate\Contracts\Validation\Validator;
-use Shared\Infrastructure\Exceptions\ValidationException;
-use Shared\Infrastructure\Constants\Error;
-use Shared\Infrastructure\Exceptions\AuthorizationException;
+use Shared\Infrastructure\Exception\ValidationException;
+use Shared\Infrastructure\Constant\Error;
+use Shared\Infrastructure\Exception\AuthorizationException;
 
 abstract class BaseRequest extends FormRequest
 {

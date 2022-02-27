@@ -4,8 +4,8 @@ namespace JMS\Auth\Application\Subscriber;
 
 use Shared\Domain\Enum\Role;
 use JMS\Auth\Application\ListUsers\ListUsersQuery;
-use JMS\Auth\Application\UsersResponse;
-use JMS\Auth\Domain\UsersFiltration;
+use JMS\Auth\Application\Response\UsersResponse;
+use JMS\Auth\Domain\DTO\UsersFiltration;
 use JMS\Auth\Domain\ValueObject\UserRole;
 use Shared\Domain\Bus\Event\DomainEventSubscriber;
 use JMS\Job\Domain\Event\JobCreated;
