@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console;
+namespace Shared\Infrastructure\Console;
 
 use Illuminate\Console\Command as IlluminateCommand;
 use Illuminate\Console\Scheduling\Schedule;
@@ -31,9 +31,9 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__.'/Commands', false);
 
-        $this->load(__DIR__.'/../../src/JMS/Job/Infrastructure/Console', false);
+        $this->load(__DIR__.'/../../../JMS/Job/Infrastructure/Console', false);
 
         require base_path('routes/console.php');
     }
@@ -61,7 +61,7 @@ class Kernel extends ConsoleKernel
             $command = str_replace(
                 ['/', '.php'],
                 ['\\', ''],
-                Str::after($command->getRealPath(), realpath(app_path().'/../src').DIRECTORY_SEPARATOR)
+                Str::after($command->getRealPath(), realpath(app_path()).DIRECTORY_SEPARATOR)
             );
             
             if (is_subclass_of($command, IlluminateCommand::class) &&

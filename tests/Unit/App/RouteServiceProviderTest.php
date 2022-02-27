@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\App;
 
-use App\Providers\RouteServiceProvider;
+use Shared\Infrastructure\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Request;
 use Tests\TestCase;

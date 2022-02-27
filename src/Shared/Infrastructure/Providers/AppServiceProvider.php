@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Shared\Infrastructure\Providers;
 
 use Shared\Domain\Bus\Command\CommandBus;
 use Shared\Domain\Bus\Event\EventBus;

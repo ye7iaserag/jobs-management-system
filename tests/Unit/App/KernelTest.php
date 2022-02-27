@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\App;
 
-use App\Console\Kernel;
+use Shared\Infrastructure\Console\Kernel;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Contracts\Events\Dispatcher;

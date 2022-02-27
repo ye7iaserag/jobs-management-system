@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Shared\Infrastructure\Console\Commands;
 
 use Illuminate\Console\Command;
 use Shared\Domain\Bus\Event\ConnectionFactory;

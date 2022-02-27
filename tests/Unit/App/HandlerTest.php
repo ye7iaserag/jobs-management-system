@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\App;
 
-use App\Exceptions\Handler;
+use Shared\Infrastructure\Exceptions\Handler;
 use Exception;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;

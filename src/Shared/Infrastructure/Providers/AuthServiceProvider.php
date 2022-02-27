@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Shared\Infrastructure\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use JMS\Auth\Application\ListUsers\ListUsersQueryHandler;
@@ -21,7 +21,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        // 'Shared\Infrastructure\Models\Model' => 'Shared\Infrastructure\Policies\ModelPolicy',
     ];
 
     public function register()

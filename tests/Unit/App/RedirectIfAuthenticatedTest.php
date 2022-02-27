@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\App;
 
-use App\Http\Middleware\RedirectIfAuthenticated;
+use Shared\Infrastructure\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Request;
 use Tests\TestCase;

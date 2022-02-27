@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Providers;
+namespace Shared\Infrastructure\Providers;
 
 use JMS\Job\Application\CreateJob\CreateJobCommandHandler;
 use JMS\Job\Application\DeleteJob\DeleteJobByIdCommandHandler;

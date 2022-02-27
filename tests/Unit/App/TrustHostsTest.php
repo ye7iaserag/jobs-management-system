@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\App;
 
-use App\Http\Middleware\TrustHosts;
+use Shared\Infrastructure\Http\Middleware\TrustHosts;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
