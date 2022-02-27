@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace JMS\Job\Infrastructure\Http\Controllers;
 
-use JMS\Job\Application\CreateJob\CreateJobCommand;
+use JMS\Job\Application\Command\CreateJob\CreateJobCommand;
 use Shared\Domain\Bus\Command\CommandBus;
 use Shared\Domain\Port\UuidGenerator;
 use Shared\Domain\Port\AuthService;

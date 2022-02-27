@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Auth\Application\Login;
+namespace JMS\Auth\Application\Query\Login;
 
 use Shared\Domain\Bus\Query\Query;
 

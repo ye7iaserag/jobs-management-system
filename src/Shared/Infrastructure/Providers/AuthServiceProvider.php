@@ -3,12 +3,12 @@
 namespace Shared\Infrastructure\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use JMS\Auth\Application\ListUsers\ListUsersQueryHandler;
+use JMS\Auth\Application\Query\ListUsers\ListUsersQueryHandler;
 use JMS\Auth\Domain\Port\JwtRepository as JwtRepositoryInterface;
 use JMS\Auth\Infrastructure\Service\JwtRepository;
 use JMS\Auth\Domain\Port\UserRepository as UserRepositoryInterface;
 use JMS\Auth\Infrastructure\Persistence\Eloquent\UserRepository;
-use JMS\Auth\Application\Login\LoginQueryHandler;
+use JMS\Auth\Application\Query\Login\LoginQueryHandler;
 use JMS\Auth\Domain\Port\HashService as HashServiceInterface;
 use JMS\Auth\Infrastructure\Service\HashService;
 use JMS\Auth\Application\Subscriber\JobCreatedSubscriber;

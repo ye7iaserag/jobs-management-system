@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-namespace JMS\Job\Application\GetJob;
+namespace JMS\Job\Application\Command\DeleteJob;
 
-use JMS\Job\Application\Response\JobResponse;
 use JMS\Job\Domain\ValueObject\JobId;
 use JMS\Job\Domain\Exceptions\JobNotFound;
 use JMS\Job\Domain\Port\JobRepository;
-use Shared\Domain\Bus\Query\QueryHandler;
+use Shared\Domain\Bus\Command\CommandHandler;
 
-final class GetJobByIdQueryHandler implements QueryHandler
+final class DeleteJobByIdCommandHandler implements CommandHandler
 {
     private JobRepository $repository;
 
@@ -19,15 +18,15 @@ final class GetJobByIdQueryHandler implements QueryHandler
         $this->repository = $repository;
     }
 
-    public function __invoke(GetJobByIdQuery $query): JobResponse
+    public function __invoke(DeleteJobByIdCommand $command): void
     {
-        $id = JobId::fromValue($query->id());
+        $id = JobId::fromValue($command->id());
         $job = $this->repository->find($id);
 
         if (null === $job) {
             throw new JobNotFound();
         }
 
-        return JobResponse::fromJob($job);
+        $this->repository->delete($id);
     }
 }

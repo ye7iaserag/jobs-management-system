@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Auth\Application\Login;
+namespace JMS\Auth\Application\Query\Login;
 
 use JMS\Auth\Application\Response\LoginResponse;
 use JMS\Auth\Domain\ValueObject\{ UserEmail, UserPassword, JwtToken };

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\CreateJob\CreateJobCommand;
-use JMS\Job\Application\CreateJob\CreateJobCommandHandler;
+use JMS\Job\Application\Command\CreateJob\CreateJobCommand;
+use JMS\Job\Application\Command\CreateJob\CreateJobCommandHandler;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Exceptions\JobAlreadyExists;
 use JMS\Job\Domain\Port\JobRepository;

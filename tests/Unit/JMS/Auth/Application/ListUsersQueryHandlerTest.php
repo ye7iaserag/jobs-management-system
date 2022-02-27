@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Auth\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Auth\Application\ListUsers\ListUsersQuery;
-use JMS\Auth\Application\ListUsers\ListUsersQueryHandler;
+use JMS\Auth\Application\Query\ListUsers\ListUsersQuery;
+use JMS\Auth\Application\Query\ListUsers\ListUsersQueryHandler;
 use JMS\Auth\Domain\Entity\User;
 use JMS\Auth\Domain\Port\UserRepository;
 use JMS\Auth\Domain\DTO\Users;

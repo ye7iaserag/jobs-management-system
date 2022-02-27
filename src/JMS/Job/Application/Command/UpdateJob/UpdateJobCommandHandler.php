@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-namespace JMS\Job\Application\UpdateJob;
+namespace JMS\Job\Application\Command\UpdateJob;
 
-use JMS\Job\Domain\Entity\Job;
-use JMS\Job\Domain\Entity\JobOwner;
 use JMS\Job\Domain\ValueObject\{JobId, JobTitle, JobDescription};
 use JMS\Job\Domain\Exceptions\JobNotFound;
 use JMS\Job\Domain\Port\JobRepository;

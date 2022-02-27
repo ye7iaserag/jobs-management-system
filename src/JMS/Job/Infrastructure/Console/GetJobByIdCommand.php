@@ -3,7 +3,7 @@
 namespace JMS\Job\Infrastructure\Console;
 
 use Illuminate\Console\Command;
-use JMS\Job\Application\GetJob\GetJobByIdQuery;
+use JMS\Job\Application\Query\GetJob\GetJobByIdQuery;
 use Shared\Domain\Bus\Query\QueryBus;
 
 class GetJobByIdCommand extends Command

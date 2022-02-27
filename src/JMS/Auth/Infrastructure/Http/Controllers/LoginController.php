@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace JMS\Auth\Infrastructure\Http\Controllers;
 
-use JMS\Auth\Application\Login\LoginQuery;
+use JMS\Auth\Application\Query\Login\LoginQuery;
 use Shared\Domain\Bus\Query\QueryBus;
 use JMS\Auth\Infrastructure\Http\Requests\LoginRequest;
 use JMS\Auth\Infrastructure\Http\Resources\LoginResource;

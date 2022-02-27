@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Job\Application\GetJob;
+namespace JMS\Job\Application\Query\GetJob;
 
 use Shared\Domain\Bus\Query\Query;
 

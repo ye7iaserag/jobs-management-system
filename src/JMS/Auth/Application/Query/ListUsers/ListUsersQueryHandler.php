@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Auth\Application\ListUsers;
+namespace JMS\Auth\Application\Query\ListUsers;
 
 use JMS\Auth\Application\Response\UsersResponse;
 use JMS\Auth\Domain\Port\UserRepository;

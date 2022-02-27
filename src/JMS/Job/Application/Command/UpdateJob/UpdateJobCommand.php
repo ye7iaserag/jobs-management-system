@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Job\Application\UpdateJob;
+namespace JMS\Job\Application\Command\UpdateJob;
 
 use Shared\Domain\Bus\Command\Command;
 

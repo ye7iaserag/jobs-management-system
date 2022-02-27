@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\ListJobs\ListJobsQuery;
-use JMS\Job\Application\ListJobs\ListJobsQueryHandler;
+use JMS\Job\Application\Query\ListJobs\ListJobsQuery;
+use JMS\Job\Application\Query\ListJobs\ListJobsQueryHandler;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Port\JobRepository;
 use JMS\Job\Domain\DTO\Jobs;

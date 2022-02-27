@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\CreateJob\CreateJobCommand;
+use JMS\Job\Application\Command\CreateJob\CreateJobCommand;
 use Tests\TestCase;
 
 final class CreateJobCommandTest extends TestCase

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\ListJobs\ListJobsQuery;
+use JMS\Job\Application\Query\ListJobs\ListJobsQuery;
 use JMS\Job\Domain\DTO\JobsFiltration;
 use JMS\Job\Domain\ValueObject\JobOwnerId;
 use Tests\TestCase;

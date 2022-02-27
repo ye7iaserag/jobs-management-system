@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Job\Application\DeleteJob;
+namespace JMS\Job\Application\Command\DeleteJob;
 
 use Shared\Domain\Bus\Command\Command;
 

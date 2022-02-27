@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Auth\Application\ListUsers;
+namespace JMS\Auth\Application\Query\ListUsers;
 
 use Shared\Domain\Bus\Query\Query;
 use JMS\Auth\Domain\DTO\UsersFiltration;

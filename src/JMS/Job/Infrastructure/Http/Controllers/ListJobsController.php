@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace JMS\Job\Infrastructure\Http\Controllers;
 
 use JMS\Job\Application\Response\JobsResponse;
-use JMS\Job\Application\ListJobs\ListJobsQuery;
+use JMS\Job\Application\Query\ListJobs\ListJobsQuery;
 use Shared\Domain\Bus\Query\QueryBus;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;

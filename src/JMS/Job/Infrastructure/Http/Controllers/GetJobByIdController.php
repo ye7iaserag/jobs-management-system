@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace JMS\Job\Infrastructure\Http\Controllers;
 
-use JMS\Job\Application\GetJob\GetJobByIdQuery;
+use JMS\Job\Application\Query\GetJob\GetJobByIdQuery;
 use Shared\Domain\Bus\Query\QueryBus;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;

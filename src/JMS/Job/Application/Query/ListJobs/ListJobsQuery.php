@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Job\Application\ListJobs;
+namespace JMS\Job\Application\Query\ListJobs;
 
 use Shared\Domain\Bus\Query\Query;
 use JMS\Job\Domain\DTO\JobsFiltration;

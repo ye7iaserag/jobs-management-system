@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Job\Application\CreateJob;
+namespace JMS\Job\Application\Command\CreateJob;
 
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Exceptions\JobAlreadyExists;

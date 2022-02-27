@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Email\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Email\Application\Send\SendEmailCommand;
+use JMS\Email\Application\Command\Send\SendEmailCommand;
 use Tests\TestCase;
 
 final class SendEmailCommandTest extends TestCase

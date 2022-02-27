@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Email\Application\Send;
+namespace JMS\Email\Application\Command\Send;
 
 use Shared\Domain\Bus\Command\CommandHandler;
 use JMS\Email\Domain\ValueObject\{ EmailId, EmailAddress, EmailSubject, EmailBody };

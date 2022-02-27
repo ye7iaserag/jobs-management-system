@@ -8,7 +8,7 @@ namespace Shared\Infrastructure\Providers;
 use Illuminate\Support\ServiceProvider;
 use JMS\Email\Domain\Port\EmailSender;
 use JMS\Email\Infrastructure\Service\LaravelEmailSender;
-use JMS\Email\Application\Send\SendEmailCommandHandler;
+use JMS\Email\Application\Command\Send\SendEmailCommandHandler;
 use JMS\Email\Application\Subscriber\SendEmailSubscriber;
 
 final class EmailServiceProvider extends ServiceProvider

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Job\Application\ListJobs;
+namespace JMS\Job\Application\Query\ListJobs;
 
 use JMS\Job\Application\Response\JobsResponse;
 use JMS\Job\Domain\Port\JobRepository;

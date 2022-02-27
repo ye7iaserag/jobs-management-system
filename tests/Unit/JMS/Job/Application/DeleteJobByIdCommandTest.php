@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\DeleteJob\DeleteJobByIdCommand;
+use JMS\Job\Application\Command\DeleteJob\DeleteJobByIdCommand;
 use Tests\TestCase;
 
 final class DeleteJobByIdCommandTest extends TestCase

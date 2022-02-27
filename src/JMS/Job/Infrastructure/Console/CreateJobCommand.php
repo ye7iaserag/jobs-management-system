@@ -3,7 +3,7 @@
 namespace JMS\Job\Infrastructure\Console;
 
 use Illuminate\Console\Command;
-use JMS\Job\Application\CreateJob\CreateJobCommand as CreateJobCreateJobCommand;
+use JMS\Job\Application\Command\CreateJob\CreateJobCommand as CreateJobCreateJobCommand;
 use Shared\Domain\Bus\Command\CommandBus;
 use Shared\Domain\Port\UuidGenerator;
 

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Unit\JMS\Job\Application;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use JMS\Job\Application\DeleteJob\DeleteJobByIdCommand;
-use JMS\Job\Application\DeleteJob\DeleteJobByIdCommandHandler;
+use JMS\Job\Application\Command\DeleteJob\DeleteJobByIdCommand;
+use JMS\Job\Application\Command\DeleteJob\DeleteJobByIdCommandHandler;
 use JMS\Job\Domain\Entity\Job;
 use JMS\Job\Domain\Exceptions\JobNotFound;
 use JMS\Job\Domain\Port\JobRepository;

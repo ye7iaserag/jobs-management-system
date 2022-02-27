@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace JMS\Job\Infrastructure\Http\Controllers;
 
-use JMS\Job\Application\DeleteJob\DeleteJobByIdCommand;
+use JMS\Job\Application\Command\DeleteJob\DeleteJobByIdCommand;
 use Shared\Domain\Bus\Command\CommandBus;
 use JMS\Job\Infrastructure\Http\Requests\DeleteJobRequest;
 use Shared\Domain\Bus\Query\QueryBus;
-use JMS\Job\Application\GetJob\GetJobByIdQuery;
+use JMS\Job\Application\Query\GetJob\GetJobByIdQuery;
 use JMS\Job\Application\Response\JobResponse;
 use JMS\Job\Infrastructure\Http\Resources\DeleteJobResource;
 use Shared\Domain\Port\AuthService;
