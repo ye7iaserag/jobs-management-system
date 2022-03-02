@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\App;
+namespace Tests\Unit\Shared\Infrastructure;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Shared\Domain\Bus\Event\ConnectionFactory;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\App;
+namespace Tests\Unit\Shared\Infrastructure;
 
 use Shared\Infrastructure\Http\Middleware\Authenticate;
 use Illuminate\Foundation\Testing\WithFaker;
