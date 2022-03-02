@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\App;
+namespace Tests\Unit\Shared\Infrastructure;
 
-use Shared\Infrastructure\Exceptions\Handler;
+use Shared\Infrastructure\Exception\Handler;
 use Exception;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;

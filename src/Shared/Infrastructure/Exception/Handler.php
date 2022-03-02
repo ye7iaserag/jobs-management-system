@@ -1,6 +1,6 @@
 <?php
 
-namespace Shared\Infrastructure\Exceptions;
+namespace Shared\Infrastructure\Exception;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
